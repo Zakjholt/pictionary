@@ -97,6 +97,7 @@ var pictionary = function() {
         $('.end-game').hide();
         $('.waiting').show();
         clearCanvas(canvas[0]);
+        $('#guesses').empty();
     });
 };
 
