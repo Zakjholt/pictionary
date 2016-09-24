@@ -37,6 +37,9 @@ var pictionary = function() {
     });
     socket.on('draw', draw);
 
+    function clearCanvas(canvas) {
+        canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+    }
     ////Guess box
     var guessBox;
 
@@ -93,7 +96,7 @@ var pictionary = function() {
         socket.emit('new game');
         $('.end-game').hide();
         $('.waiting').show();
-        canvas.clearRect(0, 0, canvas.width, canvas.height);
+        clearCanvas(canvas[0]);
     });
 };
 
