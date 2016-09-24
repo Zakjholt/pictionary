@@ -34,6 +34,13 @@ canvas {
     display: block;
     margin: 0 auto;
 }
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+
 </style>
 
 <!-- JS -->
@@ -42,7 +49,24 @@ canvas {
 <script src="/socket.io/socket.io.js"></script>
 <script src="main.js"></script>
 
-<div id="main">
-    <h1>Pictionary</h1>
-    <canvas id="canvas"></canvas>
+<h1>Pictionary</h1>
+
+<canvas id="canvas"></canvas>
+<div id="top-message">
+  <div style="display: none" class="end-game">
+    <h2>Game Over!</h2>
+    <p>
+      The magic word was: <span class="magic-word" style="font-weight: bold"></span>
+    </p>
+    <button class="new-game">Play Again</button>
+  </div>
+  <p class="waiting"style="display: none">Waiting...</p>
+    <div id="word-space" style="display: none">
+      The word to draw is: <span id="word" style="font-weight: bold"></span>
+    </div>
+    <div id="guess" style="display: none">
+        Make a guess: <input type="text">
+        <p>Guesses:</p>
+        <ul id="guesses"></ul>
+    </div>
 </div>
